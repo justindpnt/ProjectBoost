@@ -36,7 +36,9 @@ public class Rocket : MonoBehaviour {
     void Start() {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        if(GameObject.Find("Game Manager") != null) {
+            gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        }
         livesText = GameObject.FindObjectOfType<TextMeshProUGUI>();
     }
 
@@ -50,7 +52,9 @@ public class Rocket : MonoBehaviour {
             RespondToDebugKeys();
         }
 
-        livesText.text = gameManager.getLives().ToString();
+        if(SceneManager.GetActiveScene().buildIndex != 0) {
+            livesText.text = gameManager.getLives().ToString();
+        }
 
         if (Input.GetKey(KeyCode.Escape)) {
             Application.Quit();
