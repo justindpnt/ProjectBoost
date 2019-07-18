@@ -5,7 +5,7 @@ landing pad, overcoming all the obstacles along the way.
 
 ## Project Game Link
 
-(https://justindpnt.itch.io/project-boost)
+https://justindpnt.itch.io/project-boost
 
 ## Controls
 
